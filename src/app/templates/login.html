@@ -1,0 +1,45 @@
+<div ng-controller="loginController" class="loginContainer">
+    <img src="app/images/background.jpg" id="bg" class="img-responsive" alt="" />
+    <div class="row">
+        <div class="col-md-12 text-center content">
+            <h4>Welcome to Delhi School</h4>
+            <form name="loginForm" class="form-horizontal loginForm">
+                <!-- request OTP section -->
+                <div class="form-group" ng-show="!fetchedOtp">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                    <i class="mobIcon fa fa-lg fa-mobile" aria-hidden="true"></i>
+                                </span>
+                            <input name="mobileNumber" required class="form-control" type="tel" ng-model="mobileNumber" placeholder="Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group submitContainer">
+                        <div class="col-md-12 text-center">
+                            <button ng-disabled="!loginForm.mobileNumber.$valid" class="btn btn-success" ng-click="requestOtp(mobileNumber)">Request OTP</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enter OTP section -->
+                <div class="form-group" ng-class="{'has-error':errMessage.length}" ng-show="fetchedOtp">
+                    <div class="col-md-12">
+                        <p>The OTP has been {{resent}}sent to '{{encodedNumber}}'.<a href="" ng-click="fetchedOtp = false">(edit)</a></p>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                    <i class="mobIcon fa fa-lg fa-unlock" aria-hidden="true"></i>
+                                </span>
+                            <input name="otp" class="form-control" type="password" ng-model="otp" placeholder="OTP">
+                        </div>
+                        <span class="errMessage">{{errMessage}}</span>
+                    </div>
+                    <div class="form-group submitContainer">
+                        <div class="col-md-6 text-center">
+                            <button class="btn btn-warning" ng-click="requestOtp(mobileNumber,true)">Resend OTP</button>
+                            <button class="btn btn-success" ng-click="submitOtp(otp)">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

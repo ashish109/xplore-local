@@ -1,0 +1,47 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+
+
+body{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    margin : 30px;
+    font-size : 14px;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.clear-fix {
+	clear:both;
+}
+.pointer {
+  cursor: pointer;
+}
+.italic{
+  font-style: italic;
+}
+hr {
+  clear: both;
+}
+.center {
+  text-align: center;
+}
+.errMessage {
+  color:red;
+}
+
+// import files here
+@import "font-awesome.scss";@import "login.scss";
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+/*// injector
+// endinjector*/
