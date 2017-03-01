@@ -16,6 +16,6 @@ angular.module("sampleApp").config(['$stateProvider', '$urlRouterProvider', func
             templateUrl: 'app/templates/home.html'
         })
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/home');
 
 }]);

@@ -1,0 +1,59 @@
+.homeContainer {
+    padding: 0!important;
+    button.navbar-toggle {
+        float: left;
+        border: 0!important;
+        background-color: transparent!important;
+        margin-left: 2px;
+    }
+    .currentLink {
+        line-height: 50px;
+        color: #ffa541;
+        .searchIcon {
+            float: right;
+            line-height: 50px;
+            margin-right: 10px;
+            color: #fff!important;
+        }
+    }
+    .navbar {
+        margin-bottom: 0!important;
+        ul.nav {
+            .fa {
+                padding-right: 10px;
+            }
+        }
+    }
+    .homeBody {
+        .greetingImgContainer {
+            position: relative;
+            .postContent {
+                bottom: 0;
+                left: 7%;
+                position: absolute;
+                color: #ffa541;
+            }
+            .greetingsBg {
+                width: 100%;
+            }
+        }
+    }
+    .menuIconsContainer {
+        white-space: nowrap;
+        overflow: auto;
+        .row-fluid{
+        	margin-top:5px;
+        }
+        .menuIconsDiv {
+            display: inline-block;
+            text-align: center;
+            width: 35%;
+        }
+        .menuIcons {
+            display: inline-block;
+            width: 50%;
+            border: 1px solid #f5a041;
+            border-radius: 50%;
+        }
+    }
+}

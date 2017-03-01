@@ -1,55 +1,101 @@
 'use strict';
 
-app.service('loginService', ['$http','$q','URL', function ($http, $q, URL){
-	
-	this.getOtp = function (param) {
-		var param = param;
-		var defer = $q.defer();
+app.service('loginService', ['$http', '$q', 'URL', 'OTP_URL', function($http, $q, URL, OTP_URL) {
 
-		var request = {
-			url : URL.baseUrl+'getOtp/',
-			method : 'POST',
-			contentType:"application/json; charset=UTF-8",
-			data : param
-		};
+    this.getOtp = function(param) {
+        var param = param;
+        var defer = $q.defer();
 
-		defer.notify('loading');
+        var request = {
+            url: OTP_URL.baseUrl + 'SMS/' + param.mobile + '/AUTOGEN',
+            method: 'GET'
+        };
 
-		$http(request).then(function (res){
-			
-			defer.resolve(res);
+        defer.notify('loading');
 
-		},function (err) {
+        $http(request).then(function(res) {
 
-			defer.reject(err);
-		});
+            defer.resolve(res);
 
-		return defer.promise;
-	}
+        }, function(err) {
 
-	this.submitOtp = function (param) {
-		var param = param;
-		var defer = $q.defer();
+            defer.reject(err);
+        });
 
-		var request = {
-			url : URL.baseUrl+'submitOtp/',
-			method : 'POST',
-			contentType:"application/json; charset=UTF-8",
-			data : param
-		};
+        return defer.promise;
+    }
 
-		defer.notify('loading');
+    this.submitOtp = function(param) {
+        var param = param;
+        var defer = $q.defer();
 
-		$http(request).then(function (res){
-			
-			defer.resolve(res);
+        var request = {
+            url: OTP_URL.baseUrl + 'SMS/VERIFY/'+param.otpSessionId+"/"+param.otp,
+            method: 'GET'
+        };
 
-		},function (err) {
+        defer.notify('loading');
 
-			defer.reject(err);
-		});
+        $http(request).then(function(res) {
 
-		return defer.promise;
-	}
+            defer.resolve(res);
+
+        }, function(err) {
+
+            defer.reject(err);
+        });
+
+        return defer.promise;
+    };
+
+    this.addUser = function(param) {
+        var param = param;
+        var defer = $q.defer();
+
+        var request = {
+            url: URL.baseUrl + 'addUser/',
+            method: 'POST',
+            contentType: "application/json; charset=UTF-8",
+            data: param
+        };
+
+        defer.notify('loading');
+
+        $http(request).then(function(res) {
+
+            defer.resolve(res);
+
+        }, function(err) {
+
+            defer.reject(err);
+        });
+
+        return defer.promise;
+    }
+
+    this.validateId = function(param) {
+        var param = param;
+        var defer = $q.defer();
+
+        var request = {
+            url: URL.baseUrl + 'validateUuid/',
+            method: 'POST',
+            contentType: "application/json; charset=UTF-8",
+            data: param
+        };
+
+        defer.notify('loading');
+
+        $http(request).then(function(res) {
+
+            defer.resolve(res);
+
+        }, function(err) {
+
+            defer.reject(err);
+        });
+
+        return defer.promise;
+    }
 
 }])

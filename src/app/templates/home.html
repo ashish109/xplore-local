@@ -1,3 +1,65 @@
-<div class="container">
-Welcome!! yeyy
+<div class="container homeContainer" ng-controller="homeController">
+    <div>
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed fl" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="text-center currentLink">Home
+                        <i class="fa fa-search searchIcon" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                        <li><a href="#" ui-sref="login"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                        <li><a href="#" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+                        <li><a href="#" ui-sref="about"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row homeBody">
+            <div class="greetingImgContainer">
+                <img src="app/images/greetingsBG.jpg" class="img-fluid greetingsBg" alt="Responsive image">
+                <div class="postContent">
+                    <h4>Hi Ashish!</h4>
+                    <p>Good Afternoon</p>
+                </div>
+            </div>
+        </div>
+        <div class="menuIconsContainer">
+            <div class=" row row-fluid">
+                <!-- <div class="col-md-3 menuIconsDiv"> -->
+                    <div class="col-md-2 menuIconsDiv">
+                        <img src="app/images/street-food.png" class="menuIcons" /><br/>
+                        <label>Street Foods</label>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-md-2 menuIconsDiv"> -->
+                    <div class="col-md-2 menuIconsDiv">
+                        <img src="app/images/weekend-getaway.png" class="menuIcons" /><br/>
+                        <label>Weekend Getaways</label>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-md-2 menuIconsDiv"> -->
+                    <div class="col-md-2 menuIconsDiv">
+                        <img src="app/images/road-trip.png" class="menuIcons" /><br/>
+                        <label>Road Trips</label>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-md-2 menuIconsDiv"> -->
+                    <div class="col-md-2 menuIconsDiv">
+                        <img src="app/images/local-events.png" class="menuIcons" /><br/>
+                        <label>Local Events</label>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
 </div>

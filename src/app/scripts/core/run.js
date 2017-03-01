@@ -12,4 +12,15 @@ angular.module("sampleApp").run(["$rootScope", "$state", function($rootScope, $s
     });
 
 
+    // function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    // }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        $rootScope.device_id = device.uuid;
+        // Add similar listeners for other events
+    }
+
 }]);

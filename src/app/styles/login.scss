@@ -1,7 +1,7 @@
 .loginContainer {
     position: fixed;
     height: 90%;
-    margin: 0 26px 0 0;
+    margin: 30px;
     background: rgba(0, 0, 0, 0.8);
     #bg {
         position: fixed;
@@ -20,5 +20,11 @@
     }
     .content {
         margin-top: 10%;
+    }
+    .countryCode{
+        background: #fff;
+    }
+    input[type="tel"] {
+        border-left:0!important;
     }
 }
