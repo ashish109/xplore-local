@@ -40,20 +40,50 @@
     }
     .menuIconsContainer {
         white-space: nowrap;
-        overflow: auto;
-        .row-fluid{
-        	margin-top:5px;
+        overflow-y: hidden;
+        text-align: center;
+        .row-fluid {
+            margin-top: 5px;
         }
         .menuIconsDiv {
+            &:first-child {
+                margin-left: 10px;
+            }
             display: inline-block;
             text-align: center;
-            width: 35%;
+            width: 105px;
         }
         .menuIcons {
             display: inline-block;
-            width: 50%;
+            // width: 50%;
             border: 1px solid #f5a041;
-            border-radius: 50%;
+            // border-radius: 50%;
+            height: 40px;
+        }
+    }
+    .imageCard {
+        max-height: 200px;
+        white-space: nowrap;
+        overflow-y: hidden;
+        text-align: center;
+        padding: 5%;
+        border-top: 3px solid rgba(0, 0, 0, 0.1);
+        .thumbnailCard {
+            width: 40%;
+            height: 150px;
+        }
+        .imageCardContainer {
+            position: relative;
+            p {
+            	font-size:0.9em;
+            }
+            .imageCardContent {
+                left: 0;
+                position: absolute;
+                color: #fff;
+                background: rgba(221, 221, 221, 0.54);
+                width: 100%;
+            }
         }
     }
 }
