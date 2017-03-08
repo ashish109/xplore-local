@@ -1,0 +1,28 @@
+.sightSeeingContainer {
+    .cardList {
+        padding-top: 10%;
+        font-size:0.8em;
+        &:first-child {
+            padding-top: 2%!important;
+            border-top: 3px solid rgba(0, 0, 0, 0.1);
+        }
+        // .image {
+        img {
+            width: 100%;
+            max-height: 200px;
+        }
+        .imageCardContainer {
+            position: relative;
+            .imageCardContent {
+                top: 50%;
+                position: absolute;
+                color: #ffa541;
+                // background: rgba(221, 221, 221, 0.54);
+                width: 100%;
+                font-size: 0.9em;
+                padding-left: 5px;
+            }
+        }
+    }
+    // }
+}

@@ -1,0 +1,17 @@
+<div class="sightSeeingContainer" ng-controller="sightSeeingController">
+            		<div id="rating"></div>
+
+    <div class="container">
+        <div class="cardList row" ng-repeat="sight in sightseeingObject">
+            <!-- <div class="image"> -->
+            <span class="imageCardContainer">
+                <img ng-src="{{sight.imageUrl}}" class="img-fluid" />
+                <span class="imageCardContent">
+            		<span class="rating" show-stars="{{sight.rating}}"></span>
+            	</span>
+            </span>
+                    <span><b>{{sight.name}}</b></span><br/>
+           			<span>{{sight.vicinity.split(',')[0]}},{{sight.vicinity.split(',')[1]}}</span>
+        </div>
+    </div>
+</div>

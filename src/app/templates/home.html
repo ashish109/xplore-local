@@ -1,6 +1,6 @@
 <div class="container homeContainer" ng-controller="homeController">
     <div>
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed fl" data-toggle="collapse" data-target="#navbarCollapse">
@@ -9,14 +9,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="text-center currentLink">Home
+                    <div class="text-center currentLink"><span ng-click="showHome()">Home</span>
                         <i class="fa fa-search searchIcon" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                        <li><a href="#" ui-sref="home" ng-click="showHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
                         <li><a href="#" ui-sref="login"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
                         <li><a href="#" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
                         <li><a href="#" ui-sref="about"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a></li>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </nav>
-        <div class="row homeBody">
+        <div class="homeBody">
             <div class="greetingImgContainer">
                 <img src="app/images/greetingsBG.jpg" class="img-fluid greetingsBg" alt="Responsive image">
                 <div class="postContent">
@@ -35,131 +35,134 @@
         </div>
         <div class="container menuIconsContainer">
             <div class=" row row-fluid">
-                <div class="col-md-3 menuIconsDiv">
+                <div class="col-md-3 menuIconsDiv" ng-click="menuIconClicked('street-food')">
                     <img src="app/images/street-food.png" class="menuIcons img-circle" />
                     <br/>
-                    <label>Street Food</label>
+                    <label ng-class="{active:currentPath.match('street-food')}">Street Food</label>
                 </div>
-                <div class="col-md-3 menuIconsDiv">
+                <div class="col-md-3 menuIconsDiv" ng-click="menuIconClicked('adventure')">
                     <img src="app/images/weekend-getaway.png" class="menuIcons img-circle" />
                     <br/>
-                    <label>Adventure</label>
+                    <label ng-class="{active:currentPath.match('adventure')}">Adventure</label>
                 </div>
-                <div class="col-md-3 menuIconsDiv">
+                <div class="col-md-3 menuIconsDiv" ng-click="menuIconClicked('sight-seeing')">
                     <img src="app/images/sight-seeing.png" class="menuIcons img-circle" />
                     <br/>
-                    <label>Sightseeing</label>
+                    <label ng-class="{active:currentPath.match('sight-seeing')}">Sightseeing</label>
                 </div>
-                <div class="col-md-3 menuIconsDiv">
+                <div class="col-md-3 menuIconsDiv" ng-click="menuIconClicked('games')">
                     <img src="app/images/games.png" class="menuIcons img-circle" />
                     <br/>
-                    <label>Games</label>
+                    <label ng-class="{active:currentPath.match('games')}">Games</label>
                 </div>
             </div>
         </div>
-        <div class="row row-fluid imageCard">
-            <span class="imageCardContainer">
+        <div ui-view></div>
+        <div id="welcomeCards" ng-show="currentPath=='home'">
+            <div class="row row-fluid imageCard">
+                <span class="imageCardContainer">
                 <img src="app/images/street-food/vvpuram.png" class="img-fluid mx-auto thumbnailCard" />
                 <span class="imageCardContent">
                     <p>V V Puram Food Street</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/street-food/central-tiffin-room.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Central Tiffin Room</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/street-food/brahmin-coffee-bar.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Brahmin’s Coffee Bar</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/street-food/hari-sandwich-zone.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Hari’s Sandwich Zone</p>
                 </span>
-            </span>
-        </div>
-        <div class="row row-fluid imageCard">
-            <span class="imageCardContainer">
+                </span>
+            </div>
+            <div class="row row-fluid imageCard">
+                <span class="imageCardContainer">
             <img src="app/images/adventure/cycling.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Cycling to Devarayanadurga</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/adventure/bennerghatta.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Bannerghatta National Park</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/adventure/rafting.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Rafting at Davanagere</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
                 <img src="app/images/adventure/savandurga.png" class="img-fluid mx-auto thumbnailCard" />
                 <span class="imageCardContent">
                     <p>Savandurga Hills</p>
                 </span>
-            </span>
-        </div>
-        <div class="row row-fluid imageCard">
-            <span class="imageCardContainer">
+                </span>
+            </div>
+            <div class="row row-fluid imageCard">
+                <span class="imageCardContainer">
                 <img src="app/images/sight-seeing/skandagiri.png" class="img-fluid mx-auto thumbnailCard" />
                 <span class="imageCardContent">
                     <p>Skandagiri</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/sight-seeing/bheemeshwari.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Bheemeshwari</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/sight-seeing/lumbini.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Lumbini Gardens</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/sight-seeing/nandi-hills.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Nandi Hills</p>
                 </span>
-            </span>
-        </div>
-        <div class="row row-fluid imageCard">
-            <span class="imageCardContainer">
+                </span>
+            </div>
+            <div class="row row-fluid imageCard">
+                <span class="imageCardContainer">
             <img src="app/images/games/dirt-bike.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Dirt Mania</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/games/riddle-room.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Riddle Room</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
                 <img src="app/images/games/breakout.png" class="img-fluid mx-auto thumbnailCard" />
                 <span class="imageCardContent">
                     <p>Breakout</p>
                 </span>
-            </span>
-            <span class="imageCardContainer">
+                </span>
+                <span class="imageCardContainer">
             <img src="app/images/games/flight.png" class="img-fluid mx-auto thumbnailCard" />
             <span class="imageCardContent">
                     <p>Flight 4 Fantasy</p>
                 </span>
-            </span>
+                </span>
+            </div>
         </div>
     </div>
 </div>

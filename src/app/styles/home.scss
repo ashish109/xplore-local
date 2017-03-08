@@ -1,10 +1,11 @@
 .homeContainer {
-    padding: 0!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
     button.navbar-toggle {
         float: left;
         border: 0!important;
         background-color: transparent!important;
-        margin-left: 2px;
+        margin-left: 10px;
     }
     .currentLink {
         line-height: 50px;
@@ -12,7 +13,7 @@
         .searchIcon {
             float: right;
             line-height: 50px;
-            margin-right: 10px;
+            margin-right: 25px;
             color: #fff!important;
         }
     }
@@ -42,12 +43,18 @@
         white-space: nowrap;
         overflow-y: hidden;
         text-align: center;
+        .active {
+            color:#ffa541;
+        }
         .row-fluid {
             margin-top: 5px;
         }
         .menuIconsDiv {
             &:first-child {
                 margin-left: 10px;
+            }
+            > label {
+            	font-size: 0.8em;
             }
             display: inline-block;
             text-align: center;
@@ -58,7 +65,7 @@
             // width: 50%;
             border: 1px solid #f5a041;
             // border-radius: 50%;
-            height: 40px;
+            height: 3em;
         }
     }
     .imageCard {
@@ -83,6 +90,7 @@
                 color: #fff;
                 background: rgba(221, 221, 221, 0.54);
                 width: 100%;
+                font-size: 0.8em;
             }
         }
     }

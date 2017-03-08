@@ -11,6 +11,7 @@ body{
     width: 100%;
     overflow-x: hidden;
     // margin : 30px;
+    padding-top:50px;
     font-size : 14px;
 }
 .pull-right {
@@ -39,7 +40,7 @@ hr {
 }
 
 // import files here
-@import "font-awesome.scss";@import "login.scss";@import "home.scss";
+@import "font-awesome.scss";@import "rateyo.scss";@import "login.scss";@import "home.scss";@import "sight-seeing.scss";
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */
